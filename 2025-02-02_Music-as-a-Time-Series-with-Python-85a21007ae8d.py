@@ -79,4 +79,4 @@ plt.legend()
 plt.savefig("beat_detection.png")
 plt.show()
 
-Estimated Tempo: 184.57 BPM
+# Estimated Tempo: 184.57 BPM
