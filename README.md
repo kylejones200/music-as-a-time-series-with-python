@@ -1,7 +1,7 @@
 # Music as a Time Series with Python
 
-**Published:** 2025-02-02
-**Medium:** [https://medium.com/@kyle-t-jones/music-as-a-time-series-with-python-85a21007ae8d](https://medium.com/@kyle-t-jones/music-as-a-time-series-with-python-85a21007ae8d)
+Published: 2025-02-02
+Medium: [https://medium.com/@kyle-t-jones/music-as-a-time-series-with-python-85a21007ae8d](https://medium.com/@kyle-t-jones/music-as-a-time-series-with-python-85a21007ae8d)
 
 ## About
 
