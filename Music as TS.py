@@ -1,23 +1,17 @@
-# Description: Short example for Music as a Time Series with Python.
+"""Generated from Jupyter notebook: Music as TS
+
+Magics and shell lines are commented out. Run with a normal Python interpreter."""
 
 
-import logging
+# --- code cell ---
 
 import librosa
 import librosa.display
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.signal import correlate
 
 
 def main():
-    logger = logging.getLogger(__name__)
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
-    )
-
-
     # Load an example trumpet audio file
     y, sr = librosa.load(librosa.example("trumpet"), sr=None)  # Use default sample rate
 
@@ -31,6 +25,7 @@ def main():
     plt.ylabel("Amplitude")
     plt.title("Raw Audio Waveform")
     plt.legend()
+    plt.grid()
     plt.savefig("waveform.png")
     plt.show()
 
@@ -45,6 +40,11 @@ def main():
     plt.savefig("spectrogram.png")
     plt.show()
 
+
+    # --- code cell ---
+
+    from scipy.signal import correlate
+
     # Compute autocorrelation
     corr = correlate(y, y, mode="full")
     lags = np.arange(-len(y) + 1, len(y))
@@ -57,6 +57,9 @@ def main():
     plt.savefig("autocorrelation.png")
     plt.show()
 
+
+    # --- code cell ---
+
     # Load an example trumpet audio file
     y, sr = librosa.load(librosa.example("trumpet"), sr=None)  # Use default sample rate
 
@@ -67,7 +70,7 @@ def main():
     beat_times = librosa.frames_to_time(beat_frames, sr=sr)
 
     # Print detected tempo (extract scalar properly)
-    logger.info(f"Estimated Tempo: {tempo.item():.2f} BPM")
+    print(f"Estimated Tempo: {tempo.item():.2f} BPM")
 
     # Plot beats over waveform
     plt.figure(figsize=(10, 4))
@@ -79,8 +82,6 @@ def main():
     plt.legend()
     plt.savefig("beat_detection.png")
     plt.show()
-
-    # Estimated Tempo: 184.57 BPM
 
 
 if __name__ == "__main__":
